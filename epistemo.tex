@@ -1,0 +1,357 @@
+\errorcontextlines=10
+\documentclass[12pt]{report}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[french]{babel}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage[acronym]{glossaries}
+\usepackage[hidelinks]{hyperref}
+\usepackage[anythingbreaks]{breakurl}
+
+\title{Des échecs de l'informatique}
+\author{Nicolas Sentout \\ Maxime Pacaud \\ Lorian Corbel}
+
+\addbibresource{biblio.bib}
+\makeglossaries
+
+\parskip=5pt plus2pt minus 1pt
+\frenchbsetup{ReduceListSpacing=false}
+
+\begin{document}
+
+% ACRONYM
+\newacronym{IP}{IP}{Internet Protocol}
+\newacronym{TCP}{TCP}{Transport Control Protocol}
+\newacronym{OSI}{OSI}{Open Systems Interconnection}
+\newacronym{PTT}{PTT}{Postes, Télégraphes et Téléphones}
+\newacronym{DGT}{DGT}{Direction Générale des Télécommunications}
+\newacronym{CNET}{CNET}{Centre National d'Études des Télécommunications}
+\newacronym{ETCD}{ETCD}{Équipement de Terminaison de Circuit de Données}
+\newacronym{ETTD}{ETTD}{Équipement Terminal de Traitement de Données}
+\newacronym{DARPA}{DARPA}{Defense Advanced Research Projects Agency}
+\newacronym{INRIA}{INRIA}{Institut National de Recherche en Informatique et en Automatique}
+\newacronym{CCITT}{CCITT}{Comité Consultatif International Télégraphique et Téléphonique}
+\newacronym{ARPANET}{ARPANET}{Advanced Research Projects Agency Network}
+\newacronym{CNES}{CNES}{Centre National d'Études Spatiales}
+
+\maketitle
+\tableofcontents
+
+% ~=~=~=~=~=~=~
+% ERP FOX MEYER
+% ~=~=~=~=~=~=~
+\chapter{L'échec de l'ERP de FoxMeyer}
+
+\section{Qu'est-ce qu'un ERP ?}
+
+Un logiciel \textbf{ERP} (Enterprise Resource Planning ou PGI pour Progiciel de Gestion Intégré en français) est un outil informatisé qui permet le pilotage de l’entreprise. Sa particularité est d’embarquer, en un même logiciel et une seule base de données, les fonctionnalités nécessaires à la gestion de l’ensemble de l’activité d’une entreprise : gestion comptable, gestion commerciale, gestion des stocks…
+
+Selon la définition donnée par le CXP, le premier cabinet européen d’analyse et de conseil dans le domaine des logiciels, un ERP doit :
+\begin{itemize}
+\item émaner d'un concepteur unique
+\item garantir à l'utilisateur l'unicité d'information assurée par la disponibilité de l'intégralité de la structure de la base de données à partir de chacun des modules, même pris individuellement
+\item reposer sur une mise à jour en temps réel des informations modifiées dans tous les modules affectés
+\item fournir des pistes d'audit basées sur la garantie d'une totale traçabilité des opérations de gestion
+\item couvrir soit une fonction (ou filière) de gestion, soit la totalité du système d'information de l'entreprise.
+\end{itemize}
+
+\section{Le contexte de l'échec}
+
+Au début des années 90, \textit{FoxMeyer}, une entreprise dans le domaine de la santé, était le 4ème plus grand distributeur pharmaceutique aux États-Unis, avec un chiffre d’affaires de 5 milliards de dollars et plus de 500 000 produits distribués quotidiennement. Elle avait à ce moment-là pour but d’utiliser la technologie pour augmenter son efficacité. Ainsi débuta le projet Delta III en 1993.
+\textit{FoxMeyer} conduit une étude de marché et une évaluation de produits et acheta SAP R/3, un ERP développé par l’entreprise allemande \textit{SAP}, cette même année.
+Elle acheta également un système d’automatisation d’entrepôt d’un vendeur appelé \textit{Pinnacle} et choisit \textit{Andersen Consulting} pour intégrer et mettre en place les 2 systèmes. La réalisation du projet Delta III se fera en 1994 et 1995.
+
+Selon le président directeur général de \textit{Pinnacle}, l’échec du projet n’était pas un problème d’automatisation ni un problème logiciel mais un échec de gestion de projet.
+\textit{FoxMeyer} a fait faillite en 1996 et annonça en 1998 qu’elle poursuivait en justice \textit{SAP} ainsi que \textit{Andersen Consulting} pour 500 millions de dollars chacun.
+
+\section{Le problème plus en détail}
+
+La mise en place de ce projet de plusieurs millions de dollars était le premier du genre dans l’industrie pharmaceutique. L’implémentation de SAP R/3 aura coûté à \textit{FoxMeyer} 65 millions de dollars alors que l’entreprise espérait pouvoir faire à l’aide de cet ERP 40 millions de dollars d’économie par an.
+
+Suite à l’échec de ce projet, une mauvaise organisation du projet dès la phase de cahier des charges jusqu’au aux étapes d’implémentations a été mise en avant.
+Il y a tout d’abord eu plusieurs erreurs au niveau de la planification. \textit{FoxMeyer} a choisi un ERP non compatible avec son activité. En effet, après plusieurs tests, il s’est avéré que le SAP R/3 ne pouvait traiter que 10 000 commandes par nuit comparé à 420 000 avec l’ancien système d’ERP. Un autre problème est que l’entreprise n’a pas écouté l’avis d’autres consultants et a basé son choix uniquement sur la réputation d'\textit{Andersen Consulting} et \textit{SAP}. On notera également qu’aucun plan d’urgence n’avait été mis en place en cas de déroute du projet.
+
+On peut ensuite citer plusieurs problèmes dans la phase d’implémentation :
+\begin{itemize}
+\item aucune restructuration du processus opérationnel
+\item phase de test bâclée
+\item une portée du projet beaucoup trop ambitieuse
+\item projet beaucoup tourné vers les intérêts des collaborateurs IT
+\item mauvais management et peu de support
+\item manque de coopération de la part des utilisateurs
+\end{itemize}
+
+
+\section{Les solutions possibles}
+
+L'échec de la mise en place de l'ERP est dû à plusieurs problèmes qui auraient pu être évités si \textit{FoxMeyer} avaient mieux planifié et gérer leur projet. Certaines méthodes et outils de gestion de projet auraient dû être privilégiés.
+
+\subsection{Qu'est-ce que la gestion de projet ?}
+
+La gestion de projet est une démarche visant à organiser de bout en bout le bon déroulement d'un projet.
+La norme ISO 9000 décrit un projet comme un « processus unique, qui consiste en un ensemble d'activités coordonnées et maîtrisées comportant une date de début et une date de fin, entrepris dans le but d'atteindre un objectif conforme à des 
+exigences spécifiques, incluant des contraintes de délais, de coûts et de ressources ».
+
+Les acteurs principaux d'un projet sont le maître d'ouvrage (MOA), le maître d’œuvre (MOE) et l'utilisateur.
+Le \textbf{maître d'ouvrage} est le représentant du client. A partir des demandes des futurs utilisateurs, il établit un cahier des charges puis passe un contrat avec le fournisseur.
+Le \textbf{maître d’œuvre} est celui qui réalise le projet. Dans le cas de \textit{FoxMeyer}, \textit{Andersen Consulting} a été choisi pour implémenter l'ERP.
+L'\textbf{utilisateur} apporte l'expression des besoins. Un des problèmes de \textit{FoxMeyer} vient de cet acteur. En effet, il a été reporté que certains utilisateurs n'étaient pas très engagés. C'est compréhensible étant donné que leur travail était menacé par le projet d'automatisation de l'entrepôt.
+
+Un projet a également 3 contraintes caractéristiques :
+\begin{itemize}
+\item les objectifs du projet ou sa portée
+\item les délais dont on dispose pour finir le projet
+\item le coût
+\end{itemize}
+
+On peut représenter ces 3 contraintes comme ceci sur la figure \ref{fig:trg}.
+\begin{figure}[htp]
+  \centering
+  \includegraphics[scale=0.8]{images/triangle_projet}
+  \caption{Triangle de projet}
+  \label{fig:trg}
+\end{figure}
+
+Il faut retenir que les 3 côtés sont liés : si l'un est modifié, les autres le seront également. On notera aussi que la portée du projet de \textit{FoxMeyer} était beaucoup trop grande ce qui explique en partie son échec.
+
+La gestion de projet s’astreint à ces 3 contraintes pour répondre aux exigences de compétitivité des entreprises et d’adaptation aux évolutions du marché dans un environnement de plus en plus complexe et incertain. Pour cela, il est nécessaire de se conformer à des méthodes de gestion, d'organisation et de management…
+
+\subsection{Les méthodes agiles}
+
+Parmi ces méthodes de gestion, nous retrouvons les méthodes agiles. Ce sont les méthodes les plus communément utilisées en entreprise de nos jours.
+Elles sont plus structurées et plus légères que d'autres méthodes traditionnelles et sont censées donner de l'agilité pour contourner les obstacles et s'adapter aux particularités de chaque projet.
+Dans ces méthodes, on remarque notamment que les besoins du client peuvent changer (ce qui est en pratique souvent le cas), une plus forte collaboration entre le MOE et le MOA et des itérations courtes qui permettent de produire un livrable à chaque fois opérationnel. De plus, l'oral  est privilégié pour la communication entre les différents acteurs.
+La vision du travail est également un élément clé : motivation des développeurs, rythme soutenable, équipes auto-organisées, qualité de l'architecture et simplicité des développements, amélioration continue, etc.
+
+On pourrait résumer l'état d'esprit des méthodes agiles avec 4 valeurs :
+\begin{itemize}
+\item les individus et leurs interactions plus que les processus et les outils
+\item des logiciels opérationnels plus qu'une documentation exhaustive
+\item la collaboration avec les clients plus que la négociation contractuelle
+\item l'adaptation au changement plus que le suivi d'un plan
+\end{itemize}
+On retrouve plusieurs méthodes utilisant les modèles agiles.
+
+\subsubsection{Scrum}
+
+Scrum est un cadre de travail permettant de répondre à des problèmes complexes et changeants tout en livrant de manière productive et créative des produits de la plus grande valeur possible.~~\\
+Nous avons précédemment décrit qu'une gestion de projet classique avait 3 acteurs (MOA, MOE, utilisateur). Scrum définit 3 rôles bien distincts pour mener un projet à terme.
+
+Le propriétaire du produit, ou plus couramment appelé le \textbf{Product Owner} (PO) est le premier de ces rôles. Il est le responsable du client et des utilisateurs. C'est celui qui définit les fonctionnalités, les priorise et collabore avec les autres rôles. Il est exigeant et soutient l'équipe en lui donnant de la reconnaissance
+
+L'\textbf{équipe de réalisation} est responsable de la livraison d'une nouvelle version de l'application à chaque itération. Elle ne comporte pas de rôles prédéfinis et est auto-organisée. Cela signifie que que c'est elle qui choisit comment accomplir son travail sans que ce soit imposé par une personne externe à l'équipe.
+
+Le troisième et dernier rôle est le \textbf{scrum master} (ou maître de mêlée). Son principal but est de faire en sorte que l'équipe de développement n'ait ni obstacles ni distractions et qu'elle puisse travailler dans de parfaites conditions pour délivrer le produit dans les temps.~~\\
+Ce n'est pas un chef de projet classique, on pourrait le qualifier comme un « leader au service de l'équipe ». Il aide l'équipe à déterminer quelles interactions avec l'extérieur lui sont utiles et lesquelles sont freinantes.
+
+Outre ces 3 rôles, scrum fournit aussi des évènements. Chaque évènement est unique mais ils contribuent tous à empêcher le projet de dériver et à accompagner son avancement.
+
+Le premier évènement est le \textbf{sprint} (ou itération) qui est l'unité de base du développement en scrum. C'est une période d'une semaine à un mois, au bout de laquelle l'équipe de réalisation délivre un incrément du produit, potentiellement livrable. La durée de ce sprint est fixée en avance et n'est pas censée changer pendant le développement du produit. Durant un sprint on ne peut modifier ni l'objet du sprint, ni la composition de l'équipe. Le propriétaire du produit peut décider d'annuler le sprint à tout moment si l'objet de celui-ci devient obsolète. Dans ce cas, les développements terminés sont revus par le propriétaire du produit, qui peut décider de les accepter ou de les refuser. Les éléments du sprint n'étant pas acceptés sont ré-estimés et remis dans le carnet du produit. Un nouveau sprint peut alors démarrer.
+
+Une \textbf{planification de sprint} (ou planning) a lieu à chaque début de sprint. C'est une réunion durant laquelle toute l'équipe scrum est présente. Le but de cette réunion est de décider de la prochaine itération du produit et de décrire comment l'équipe s'organisera pour délivrer cette itération à temps. Durant celle-ci, les participants discutent de la quantité de travail à fournir pendant ce sprint, définissent les fonctionnalités du carnet de produit qui peuvent être complétées en un sprint et préparent un carnet de sprint qui décrit le travail à accomplir pour chaque fonctionnalité du carnet de produit sélectionnée.
+
+La \textbf{mêlée quotidienne} (ou daily scrum) intervient tous les jours durant un sprint. C'est une réunion très courte (15 minutes maximum), à laquelle n'importe qui peut participer ( bien que seule les membres de l'équipe de développement communiquent ), qui permet de faire un point sur chaque tâche en cours et sur les difficultés rencontrées par chaque développeur.
+Chaque développeur répond alors grossièrement à 3 questions :
+\begin{itemize}
+\item Qu'est-ce que j'ai fait depuis la dernière mêlée ?
+\item Qu'est-ce que j'ai l'intention de faire d'ici la prochaine mêlée ?
+\item Qu'est-ce qui me freine ou bloque ?
+\end{itemize}
+
+La mêlée permet donc de synchroniser l'équipe et d'identifier les éventuels retards pris par l'équipe de développement.
+
+La \textbf{revue du sprint} prend place à la fin d'un sprint et dure maximum 4 heures. Son objectif est de valider l'incrément de produit qui a été réalisé pendant le sprint.
+L'équipe évoque les fonctionnalités finies et celles en cours de développement. Ensuite, elle présente aux personnes qui participent à la revue les nouvelles fonctionnalités développées au cours du sprint.
+A la suite de cette présentation, le product owner décide d'accepter ou refuser les fonctionnalités présentées.
+
+Enfin, le dernier évènement est la \textbf{rétrospective du sprint}. Seuls les 3 acteurs scrum peuvent participer. C'est une réunion, un peu moins longue que la revue du sprint, qui se concentre le sprint qui vient de se terminer. Elle permet d'améliorer le processus de développement de l'équipe en mettant les idées de chacun à contribution. Pour cela, l'équipe s'interroge sur ce qui a bien fonctionné, ce qui n'a pas fonctionné et ce qui a mal fonctionné. L'équipe de développement en déduit un plan d'actions d'amélioration qu'elle mettra en place lors de l'itération suivante.
+
+Sur le graphique figure \ref{fig:scrum}, on peut clairement voir l'enchaînement de chaque évènement dans un projet lambda.
+\begin{figure}[htp]
+  \centering
+  \includegraphics[scale=0.8]{images/events_scrum}
+  \caption{Cycle scrum}
+  \label{fig:scrum}
+\end{figure}
+
+Pour finir, les derniers éléments nécessaires au fonctionnement de scrum sont les artéfacts.
+
+En agilité, on ne produit pas de documentation complète dès le début du projet. On rajoute progressivement des fonctionnalités au produit dans un document appelé le \textbf{carnet de produit} (ou product backlog). Ce carnet contient donc la liste des fonctionnalités attendues du produit, classées selon la quantité de travail demandée. Par exemple, si notre produit est une bibliothèque en ligne, la fonctionnalité « lister tous les livres d'une certaine catégorie » vaudra 1 point et la fonctionnalité « ajouter un livre dans un panier » vaudra 5 points. Le carnet du produit, son évolution et sa publication sont sous la responsabilité du product owner. C'est lui qui décide de changer l'ordre des éléments dans la liste, d'en ajouter, d'en enlever, de modifier leur description, etc. Les éléments en tête de liste sont à prioriser dans le développement et sont mieux décrits et estimés que les autres éléments.
+
+Le \textbf{carnet de sprint} (ou sprint backlog) est le document contenant tout le travail que l'équipe de réalisation doit effectuer pendant le prochain sprint.
+Cette liste est construite par l'équipe de développement en sélectionnant des éléments du carnet de produit. L'équipe peut mettre à jour le carnet de sprint à tout moment pendant le sprint afin que celui-ci donne une vision la plus précise possible de ce que l'équipe prévoit de réaliser pour atteindre l'objectif du sprint.
+
+Le dernier artéfact de scrum est l'\textbf{incrément}. C'est l'ensemble de toutes les fonctionnalités du carnet de sprint qui ont été terminées pendant le dernier sprint plus toutes les fonctionnalités déjà terminées lors des sprints précédents. Les fonctionnalités comprises dans l'incrément doivent être complètes et doivent être telles qu'on pourrait sortir un produit fini fonctionnel intégrant seulement ces fonctionnalités.
+
+Sous-chapitres possibles :
+\begin{itemize}
+\item Modèles agiles (Scrum, RAD, XP)
+\item Modèles séquentiels (cycle en V, cycle en cascade)
+\item Modèles itératifs (cycle en spirale)
+\end{itemize}
+
+\section{Sources (todo)}
+
+Qu'est-ce qu'un ERP :
+\begin{itemize}
+\item \url{https://www.divalto.com/definition-logiciel-erp/}
+\item \url{https://fr.wikipedia.org/wiki/Progiciel\_de\_gestion\_intégré}
+\end{itemize}
+Le contexte de l'échec :
+\begin{itemize}
+\item \url{https://www.exoplatform.com/blog/fr/2017/08/02/les-5-plus-gros-echecs-de-projets-informatique}
+\end{itemize}
+Le problème plus en détail : 
+\begin{itemize}
+\item \url{http://zimmer.csufresno.edu/~sasanr/Teaching-Material/MIS/ERP/FoxMeyer.pdf}
+\end{itemize}
+Les solutions possibles :
+\begin{itemize}
+	\item Cours d'IUT de gestion de projet
+	\begin{itemize}
+		\item Qu'est-ce que la gestion de projet :
+		\begin{itemize}
+			\item \url{https://fr.wikipedia.org/wiki/Gestion\_de\_projet}
+		\end{itemize}
+		\item Les méthodes agiles
+		\begin{itemize}
+			\item \url{http://lmazardo.github.io/sensibilisation\_agile/}
+		\end{itemize}
+		\item Scrum
+		\begin{itemize}
+			\item \url{https://en.wikipedia.org/wiki/Scrum\_(software\_development)}
+			\item \url{https://fr.wikipedia.org/wiki/Scrum\_(développement)}
+			\item \url{https://www.agiliste.fr/guide-de-demarrage-scrum/}
+			\item \url{http://www.aubryconseil.com/post/Le-backlog-de-produit}
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+% ~=~=~=~=~=~=~=~=~
+% Le protocole X.25
+% ~=~=~=~=~=~=~=~=~
+\chapter{Le protocole X.25}
+
+\section{D'un circuit}
+
+Au début des années 1970, le besoin de définir des protocoles standard afin d'assurer l'interconnexion des réseaux privés à travers les réseaux publics s'est fait ressentir.
+À cette époque les protocoles de télécommunications sont par commutation de circuits, qui correspond au branchement matériel de lignes joignant des terminaux. Les informations échangées parcourent toujours le même chemin au sein du réseau durant le temps de la session. Sa simplicité conceptuelle et de mise en œuvre a fait son succès et son emploi dans les premiers réseaux de communication comme le téléphone puis dans les réseaux informatiques balbutiants des années 1950 \cite{wikicc}.
+
+En France, la commutation de circuits est mise en avant lorsque la \gls{DGT}, ancêtre de France Télécom, réalise autour de 1970 \og Caducée \fg, un service spécialisé de transmission de données, destiné à répondre à la demande des entreprises en échanges de données. Puis c'est le projet Hermès, lancé en 1971, qui vise à intégrer les progrès en commutation électronique. Pour la DGT, c'est un enjeu important face aux réseaux privés, utilisant des liaisons spécialisées. Elle a alors eu besoin de services informatiques pour la programmation ou le calcul, et conserver la gestion des réseaux, afin de ne pas seulement fournir les lignes.
+
+\section{À un paquet}
+
+Malheureusement la commutation de circuits présente un risque de sous-utilisation du support en cas de \og silence \fg pendant la communication.
+C'est pour cette raison qu'au même moment, le British Post Office est encouragée à choisir la voie inverse, la commutation de paquets, par le National Physical Laboratory, qui emploie un des pionniers de cette technologie, Donald Davies. La commutation de paquets est fondée sur le découpage des données pour permettre une utilisation rationnelle du réseau. En effet, contrairement à la commutation de circuits les ressources ne sont réservées que durant leur utilisation effective (par exemple: le temps de transfert d'un paquet). Chaque paquet est composé d'un en-tête contenant des informations sur son contenu et sa destination, qui permet au commutateur d'aiguiller le paquet sur le réseau vers son point final \cite{wikicp}.
+
+Le principe de la commutation de paquets, baptisé plus tard \og datagramme \fg, a été imaginé de manière encore abstraite et publié pour la première fois en 1964, et présenté en 1968 à la Conférence d'Edimbourg par Donald Davies, du National Physical Laboratory britannique puis par Paul Baran. Mais en 1971, aucun réseau n'avait encore été conçu de la sorte.
+
+\section{Cyclades}
+
+(todo : parler du Plan Calcul ? De la CII ?)
+
+C'est l'année d'une mission d’information technique française consacrée aux outils à leur offrir, qui effectue un séjour aux États-Unis, suivre les tout débuts de l'\gls{ARPANET}, le réseau à transfert de paquets développé aux États-Unis par la \gls{DARPA}. Le projet fut lancé en 1966, mais ARPANET ne vit le jour qu'en 1969. Sa première démonstration officielle date d'octobre 1972 \cite{wikiarpa}.
+
+À l'époque, toutes les administrations françaises voulaient mettre en place leurs propres bases de données. Les universités coopèrent au projet par le biais de contrats de recherche et la délégation générale à l'informatique, menée par Maurice Allègre, souhaite les interconnecter via un réseau de données. Michel Monpetit, qui cumule alors les fonctions de principal adjoint de Maurice Allègre au Plan Calcul et de directeur adjoint de l'IRIA, ancêtre de l'\gls{INRIA}, sous la direction du professeur Michel Laudet, recrute Louis Pouzin à l'IRIA pour créer un réseau d'ordinateurs français pour la recherche. Baptisé Cyclades, ce projet public lancé par Maurice Allègre est dirigé par Louis Pouzin. En septembre 1971, il prend la direction de la Délégation à l’Informatique, succédant à Maurice Allègre et se fait héberger par l’IRIA \cite{wikicyc}.
+
+Chargé du projet, Louis Pouzin réunit une petite équipe, qui démarre en 1971 à six personnes environ, et choisit des gens à l’extérieur de l’IRIA comme Jean-Louis Grangé, Jean-Pierre Touchard, Michel Elie, Jean Le Bihan et Gérard Le Lann, qui se rendra chez Arpanet en 1973. Les échanges entre Cyclades et Arpanet, nombreux, ont été facilités par la présence de Français dans l'équipe de début d'Arpanet. L'équipe Cyclades entretient des contacts réguliers avec celle qui travaille à Arpanet, notamment avec Vinton Cerf et Bob Kahn.
+
+\section{Les prémices du X.25}
+
+En 1970, Antoine Jousset, du \gls{CNET}, rapporte du \gls{CCITT} des informations sur les projets anglais. Avec Rémi Després, il convainc Alain Profit, qui supervise le projet Hermès au CNET, d’expérimenter en parallèle à la commutation de circuits la commutation de paquets. Alain Profit lance l'étude et la réalisation d'un réseau expérimental à commutation par paquets dont il confie la responsabilité à Rémi Després. Ce projet deviendra six ans plus tard la norme X.25 \cite{wikicnet}. Le 29 juin 1972 un accord est signé entre la DGT et la Délégation à l’informatique, prévoyant que le CNET réaliserait le système de commutation nécessaire au projet Cyclades (réseau), l’IRIA se chargeant de la connexion des ordinateurs au réseau de commutation et des applications informatiques, tandis que les \gls{PTT} s’engagent à fournir gratuitement lignes et modems pendant trois ans.
+
+\section{Datagramme}
+
+Louis Pouzin est l'inventeur du datagramme et le concepteur du premier réseau à commutation de paquets.
+Le datagramme est un paquet de données dans un réseau informatique ou un réseau de télécommunications. Il est utilisé par des protocoles orientés \og non connectés \fg tels que : IPX ou UDP. Le datagramme est le terme généralement utilisé pour désigner la transmission d'un paquet via un service non \og fiable \fg : le protocole utilisé ne garantit pas que le paquet est arrivé à sa destination (un peu comme une lettre sans accusé de réception). Cyclades est le premier à appliquer intégralement le principe du datagramme, qu'il présente en 1973, dans une conférence internationale. Vinton Cerf et Robert E. Kahn s'en sont emparés pour concevoir le futur protocole de communication d'Internet avec l'aide de Gérard Le Lan, le TCP/IP, qui voit le jour la même année, en reprenant la notion d'indépendance de paquets.
+
+\section{X.25}
+
+Le X.25 est un protocole par communication de paquet en mode point par point \cite{wikix25}. Développé fin 1971 par le \gls{CNET}, il est finalement normalisé en 1976 par le \glspl{CCITT}, à la demande de 5 pays qui l'utilisaient pour leurs réseaux publics de communication : La France, la Grande-Bretagne, le Canada, la Belgique et les États-Unis. Il a été essentiellement réalisé par les opérateurs téléphoniques, les \gls{PTT}, ce qui lui a assuré une indépendance totale par rapport à un produit ou à un système d'un quelconque constructeur. En 1977, une nouvelle société d'économie mixte, filiale de la DGT est chargée de l'exploitation et de la commercialisation du réseau public Transpac, réseau de transmission de données au protocole X25 couvrant tout le territoire français, prévu pour les échanges de données des entreprises. Il est ouvert en 1978. Elle détenait le monopole commercial pour la fourniture d'accès X.25 de 1979 jusqu'à 2006 \cite{wikitranspac}.
+
+\section{Deux réseaux concurrents}
+
+La france dispose alors de deux réseaux à commutation de paquets, Cyclades soutenu par l'IRIA et Transpac soutenu par les PTT. Malgré que le réseau Cyclades fut opérationnel en 1974, avec la participation et la coopération du CNET, qui a pourtant un parc de matériel différent, des choix politiques s'y opposent dès 1975.
+
+Louis Pouzin parvient à faire admettre l'idée de développer un réseau de paquets indépendant des PTT \og sans qu'il en résulte des mesures de rétorsion notables de la part du CNET \fg. Mais l'élection de Valéry Giscard d'Estaing à la présidence de la République entraîne \og une révision de la politique informatique \fg, mais les raisons sont essentiellement d'ordre politique, commercial et économique.
+
+Le financement du projet, pourtant modeste, a été définitivement arrêté en 1978, au motif qu'il entrait en concurrence avec Transpac. Le réseau Minitel passa donc par ce dernier, avec pour ses utilisateurs un coût plus élevé et le rationnement de l'accès aux données. Le protocole X.25 remporte d'abords en France une victoire sur les datagrammes.
+
+(todo : expliquer l'affaire CGE et Thomson CSF ? Giscard Gate ? Expliquer la différence des deux réseaux ici ou dans spécifications ?)
+
+\section{Modèle OSI}
+(todo : architecture puis norme ISO d'un réseau)
+
+\section{TCP/IP}
+(todo : retour sur le TCP/IP achevé et adopté par l'arpanet)
+
+\section{Spécification X.25}
+\begin{itemize}
+\item LAP-B
+\item X.25
+\item Adressage : X121
+\end{itemize}
+\section{Spécification TCP/IP}
+\begin{itemize}
+\item Ethernet
+\item ARP
+\item IP
+\item TCP
+\item Adressage : IPv4 et IPv6
+\end{itemize}
+
+%À la même époque est développé le protocole TCP/IP en 1973 et qui sera adopté par l'\gls{ARPANET} en 1983. Le \gls{TCP} présente le même avantage que
+%le X.25, la fiabilité et validité des paquets est garantie, à la différence qu'il ne respecte pas l'ordre de sequencement des paquets.
+
+\section{Comparaison}
+(todo : fusion possible avec la conclusion, récapitulatif des différences déjà citées)
+\section{Conclusion}
+(todo : à completer)
+
+Malheureusement l'hyper fiabilité de l'X.25 a un prix. Chaque nœud d'échange de paquets (Packet-Switching Exchanger) doit vérifier la validité du paquet qui
+transite par lui, ce qui limite et ralenti le nombre de connexion par échangeur. Tout le contraire du TCP qui contrôle les paquets à la reception par le destinataire.
+Outre ces différences de vitesse, le protocole X25 pose des problèmes d'intéropérabilité. Les différents constructeurs de l'époque (IBM, Digital), fort de leur monopole,
+ont fait tout leur possible pour rendre leurs matériels incompatible entre eux pour des raison de concurrence, ce qui complique le travaille des entreprises pour
+communiquer entre-elles et leurs différents interlocuteurs. Le X25 souffrait donc d'un problème d'ouverture et d'unification, ce qui n'est pas le cas avec l'encapsulation du TCP/IP,
+qui peut transporter n'importe quel trame à travers son réseau.
+
+Pour méditer... Selon Maurice Allègre, délégué à l'informatique du Plan Calcul :
+
+\og Louis Pouzin, polytechnicien et chercheur de très grand talent, (est à l'époque) venu proposer un projet de réseau maillé d'ordinateurs basé sur quelque chose de totalement nouveau : la commutation de paquets. Très vite, les recherches ont connu un plein succès, au point que j'ai déployé de grands efforts pour faire adopter le projet par la direction générale des télécommunications comme base pour leur futur réseau de transmissions de données, poursuivait M. Allègre. Je me suis malheureusement heurté à un mur. (Les ingénieurs des télécoms préfèrent pousser le développement industriel du Minitel. ) Nous aurions pu être parmi les pionniers du monde Internet (...), conclut le courrier de l'ancien haut fonctionnaire. Nous n'en sommes que des utilisateurs, fort distants des lieux où s'élabore l'avenir. \fg
+
+(todo : référencer convenablement, exemple \cite{gateau} et \cite{gatoux})
+
+% ~=~=~=~=~=~=~=~=~=~=~=~=~
+% Le premier vol d'Ariane 5
+% ~=~=~=~=~=~=~=~=~=~=~=~=~
+
+\chapter{Le premier vol d'Ariane 5}
+
+\section{Introduction}
+
+Le 4 juin 1996, le premier vol d'Ariane 5 a échoué. Après 37 secondes de vol la fusée explose à 4000 mètres d'altitude 
+détruisant par le même occasion sa charge utile constituée de 4 satellites, d'une valeur total de 370 millions de dollars.
+A la suite de l'incident le CNES a demandé une enquête afin de déterminer les causes de l'incident.
+
+\section{Les causes}
+
+Environ 30 secondes après le décollage, la centrale à inertie de secours est devenu inopérante à cause d'une variable relative à l'accélération horizontale de l'appareil. L'incident s'est passé lors d'une conversion    
+d'un nombre à virgule codé sur 64 bits vers un entier signé codé sur 16 bits. Le nombre à virgule à convertir avait une valeur trop grande pour être converti en entier sur 16 bits. De plus il avait été décidé de ne pas mettre en place de mesure de protection contre cette erreur car il avait été considéré qu'il était impossible que cette variable puisse atteindre des valeurs générant des dépassements de mémoire.
+
+Environ 0.05 secondes plus tard la centrale à inertie active à subi le même problème mais vu que le système de secours n'était déjà plus opérationnel plus aucune information concernant l'altitude et le guidage de la fusée n'était disponible.   
+
+L'ordinateur principal a alors interprété les données diagnostiques de la centrale à inertie comme des données de vol et a entreprit une correction de trajectoire d'une déviation qui au final n'a jamais eu lieu.
+  
+Cette nouvelle trajectoire a entrainé un changement brutal d'altitude qui a lui même causé la désintégration du lanceur de la fusée. Cette désintégration a alors  enclenché l'auto-destruction de la fusée à une altitude de 4000 mètre.
+
+Aussi le \gls{CNES} a demandé de ne pas faire de simulations de vol pour le système de navigation pour faire des économies car celui-ci avait été récupéré d'Ariane 4 et était considéré comme fiable.
+
+\section{Répercutions}
+\section{La vérification de logiciel}
+
+\printglossaries
+\printbibliography
+
+\end{document}
