@@ -35,6 +35,8 @@
 \newacronym{CCITT}{CCITT}{Comité Consultatif International Télégraphique et Téléphonique}
 \newacronym{ARPANET}{ARPANET}{Advanced Research Projects Agency Network}
 \newacronym{CNES}{CNES}{Centre National d'Études Spatiales}
+\newacronym{CVP}{CVP}{Circuit Virtuel Permanent}
+\newacronym{CVC}{CVC}{Circuit Virtuel Commuté}
 
 \maketitle
 \tableofcontents
@@ -224,7 +226,7 @@ Le datagramme est un paquet de données dans un réseau informatique ou un rése
 
 \section{X.25}
 
-Le X.25 est un protocole par communication de paquet en mode point par point \cite{wikix25}. Développé fin 1971 par le \gls{CNET}, il est finalement normalisé en 1976 par le \glspl{CCITT}, à la demande de 5 pays qui l'utilisaient pour leurs réseaux publics de communication : La France, la Grande-Bretagne, le Canada, la Belgique et les États-Unis. Il a été essentiellement réalisé par les opérateurs téléphoniques, les \gls{PTT}, ce qui lui a assuré une indépendance totale par rapport à un produit ou à un système d'un quelconque constructeur. En 1977, une nouvelle société d'économie mixte, filiale de la DGT est chargée de l'exploitation et de la commercialisation du réseau public Transpac, réseau de transmission de données au protocole X25 couvrant tout le territoire français, prévu pour les échanges de données des entreprises. Il est ouvert en 1978. Elle détenait le monopole commercial pour la fourniture d'accès X.25 de 1979 jusqu'à 2006 \cite{wikitranspac}.
+Le X.25 est un protocole par communication de paquet en mode point par point \cite{wikix25}. Développé fin 1971 par le \gls{CNET}, il est finalement normalisé en 1976 par le \glspl{CCITT}, à la demande de 5 pays qui l'utilisaient pour leurs réseaux publics de communication : La France, la Grande-Bretagne, le Canada, la Belgique et les États-Unis. Il a été essentiellement réalisé par les opérateurs téléphoniques, les \gls{PTT}, ce qui lui a assuré une indépendance totale par rapport à un produit ou à un système d'un quelconque constructeur. En 1977, une nouvelle société d'économie mixte, filiale de la DGT est chargée de l'exploitation et de la commercialisation du réseau public Transpac, réseau de transmission de données au protocole X.25 couvrant tout le territoire français, prévu pour les échanges de données des entreprises. Il est ouvert en 1978. Elle détenait le monopole commercial pour la fourniture d'accès X.25 de 1979 jusqu'à 2006 \cite{wikitranspac}.
 
 \section{Deux réseaux concurrents}
 
@@ -234,21 +236,63 @@ Louis Pouzin parvient à faire admettre l'idée de développer un réseau de paq
 
 Le financement du projet, pourtant modeste, a été définitivement arrêté en 1978, au motif qu'il entrait en concurrence avec Transpac. Le réseau Minitel passa donc par ce dernier, avec pour ses utilisateurs un coût plus élevé et le rationnement de l'accès aux données. Le protocole X.25 remporte d'abords en France une victoire sur les datagrammes.
 
-(todo : expliquer l'affaire CGE et Thomson CSF ? Giscard Gate ? Expliquer la différence des deux réseaux ici ou dans spécifications ?)
+%(todo : expliquer l'affaire CGE et Thomson CSF ? Giscard Gate ? Expliquer la différence des deux réseaux ici ou dans spécifications ?)
 
 \section{Modèle OSI}
 (todo : architecture puis norme ISO d'un réseau)
 
 \section{TCP/IP}
-(todo : retour sur le TCP/IP achevé et adopté par l'arpanet)
+
+À la même époque est développé le protocole TCP/IP en 1973 et qui sera adopté par l'\gls{ARPANET} en 1983. Le \gls{TCP} présente le même avantage que
+le X.25, la fiabilité et validité des paquets est garantie, à la différence qu'il ne respecte pas l'ordre de sequencement des paquets.
 
 \section{Spécification X.25}
+\subsection{Principe}
+Le protocole X.25 ne spécifie pas un réseau à commutation de paquet. Il précise en premier lieu un protocole d'interface d'accès au réseau, c'est-à-dire qu'il définit comment communique un \gls{ETTD},
+potentiellement un minitel, avec un nœud du réseau, ce que l'on appelle un \gls{ETCD} \cite{cnam}, voir figure \ref{fig:net}.
+
+\subsection{Normalisation OSI}
+Le protocole X.25 intègre les trois couches basses du modèle OSI :
+
 \begin{itemize}
-\item LAP-B
-\item X.25
-\item Adressage : X121
+\item couche physique : \textbf{X21} une interface physique et électrique (liaison série) recommandée et publiée par CCITT en 1976 sur la liaison ETTD/ETCD \cite{wikix21}.
+\item couche liaison : \textbf{HDLC : LAP-B} assure que les trames arrivent dans l'ordre et sans erreurs, c'est ce qui assure la fiabilité du X.25 \cite{wikilapb}.
+\item couche réseau : \textbf{X25.3} est le cœur du protocole X.25, il assure la gestion des connexions ainsi que l'adressage \cite{gatoux}.
 \end{itemize}
+
+\subsection{Circuit Virtuel}
+Puisque que l'X.25 est un protocole connecté qui fonctionne par commutation de paquet, il utilise un circuit virtuel représenté par une voie logique par connexion. En théorie X.25 supporte 4096 ($2^{16}$ voir figure \ref{fig:x25}) voies logiques mais dans la pratique, 256 voies logiques sont permises par ETTD.
+Un circuit virtuel, une fois établi, permet de considérer la connexion entre deux ETTD comme une liaison directe (abstraction du réseau de transport) de la même manière qu'une liaison téléphonique usuelle \cite{navarro}.
+
+On peut ouvrir deux type de circuit virtuel :
+\begin{itemize}
+\item \gls{CVP} qui établi de façon permanente, ce qui supprime la phase de connexion, donc un gain de temps. Intéressant si on a un trafic régulier sur la ligne, par contre excessivement coûteux.
+\item \gls{CVC} demande quand à lui une phase de connexion. C'est lors de cette phase que seront négociées les options et que l'on attribuera un numéro de voie logique. Pour établir la communication on utilise le type de paquet \og CALL REQUEST \fg, voir figure \ref{fig:x25}, dans lequel figureront les adresses destinataire et expéditeur. Ces adresses sont au format défini par la norme X121 \cite{navarro}.
+\end{itemize}
+
+\subsection{Adressage}
+X.121 est défini par le CCITT comme : \og Plan de numérotation international pour les réseaux de données publiques \fg.
+
+C'est une norme d'adressage des réseaux. Elle est comparable à l'adressage E.164 (numérotation téléphonique) ou à l'adressage IP. Elle est principalement utilisée comme solution d'adressage par le protocole X.25 pour l'établissement de circuits virtuels commutés. D'autres protocoles, tel que Frame relay, peuvent utiliser X.121 \cite{wikix121}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[scale=0.8]{images/network}
+  \caption{Réseau X.25}
+  \label{fig:net}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[scale=0.3]{images/x25}
+  \caption{Trame X.25 \og CALL REQUEST \fg}
+  \label{fig:x25}
+\end{figure}
+
 \section{Spécification TCP/IP}
+\subsection{Principe}
+\subsection{Normalisation OSI}
+\subsection{Adressage}
 \begin{itemize}
 \item Ethernet
 \item ARP
@@ -256,9 +300,6 @@ Le financement du projet, pourtant modeste, a été définitivement arrêté en 
 \item TCP
 \item Adressage : IPv4 et IPv6
 \end{itemize}
-
-%À la même époque est développé le protocole TCP/IP en 1973 et qui sera adopté par l'\gls{ARPANET} en 1983. Le \gls{TCP} présente le même avantage que
-%le X.25, la fiabilité et validité des paquets est garantie, à la différence qu'il ne respecte pas l'ordre de sequencement des paquets.
 
 \section{Comparaison}
 (todo : fusion possible avec la conclusion, récapitulatif des différences déjà citées)
