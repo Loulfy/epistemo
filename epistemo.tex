@@ -154,7 +154,7 @@ Le premier évènement est le \textbf{sprint} (ou itération) qui est l'unité d
 
 Une \textbf{planification de sprint} (ou planning) a lieu à chaque début de sprint. C'est une réunion durant laquelle toute l'équipe Scrum est présente. Le but de cette réunion est de décider de la prochaine itération du produit et de décrire comment l'équipe s'organisera pour délivrer cette itération à temps. Durant celle-ci, les participants discutent de la quantité de travail à fournir pendant ce sprint, définissent les fonctionnalités du carnet de produit qui peuvent être complétées en un sprint et préparent un carnet de sprint qui décrit le travail à accomplir pour chaque fonctionnalité du carnet de produit sélectionnée.
 
-La \textbf{mêlée quotidienne} (ou daily Scrum) intervient tous les jours durant un sprint. C'est une réunion très courte (15 minutes en général), à laquelle n'importe qui peut participer ~~\\ ( bien que seuls les membres de l'équipe de développement communiquent ), qui permet de faire un point sur chaque tâche en cours et sur les difficultés rencontrées par chaque développeur.
+La \textbf{mêlée quotidienne} (ou daily Scrum) intervient tous les jours durant un sprint. C'est une réunion très courte (15 minutes en général), à laquelle n'importe qui peut participer ~~\\ (bien que seuls les membres de l'équipe de développement communiquent), qui permet de faire un point sur chaque tâche en cours et sur les difficultés rencontrées par chaque développeur.
 Chaque développeur répond alors grossièrement à 3 questions :
 \begin{itemize}
 \item Qu'est-ce que j'ai fait depuis la dernière mêlée ?
@@ -195,14 +195,14 @@ Le dernier artéfact de Scrum est l'\textbf{incrément}. C'est l'ensemble de tou
 \section{D'un circuit}
 
 Au début des années 1970, le besoin de définir des protocoles standard afin d'assurer l'interconnexion des réseaux privés à travers les réseaux publics s'est fait ressentir.
-À cette époque les protocoles de télécommunications sont par commutation de circuits, qui correspond au branchement matériel de lignes joignant des terminaux. Les informations échangées parcourent toujours le même chemin au sein du réseau durant le temps de la session. Sa simplicité conceptuelle et de mise en œuvre a fait son succès et son emploi dans les premiers réseaux de communication comme le téléphone puis dans les réseaux informatiques balbutiants des années 1950\cite{wikicc}.
+À cette époque, les protocoles de télécommunications sont par commutation de circuits, qui correspond au branchement matériel de lignes joignant des terminaux. Les informations échangées parcourent toujours le même chemin au sein du réseau durant le temps de la session. Sa simplicité conceptuelle et de mise en œuvre a fait son succès et son emploi dans les premiers réseaux de communication comme le téléphone puis dans les réseaux informatiques balbutiants des années 1950\cite{wikicc}.
 
-En France, la commutation de circuits est mise en avant lorsque la \gls{DGT}, ancêtre de France Télécom, réalise autour de 1970 \og Caducée \fg, un service spécialisé de transmission de données, destiné à répondre à la demande des entreprises en échange de données. Puis c'est le projet Hermès, lancé en 1971, qui vise à intégrer les progrès en commutation électronique. Pour la DGT, c'est un enjeu important face aux réseaux privés, utilisant des liaisons spécialisées. Elle a alors eu besoin de services informatiques pour la programmation ou le calcul, et conserver la gestion des réseaux, afin de ne pas seulement fournir les lignes.
+En France, la commutation de circuits est mise en avant lorsque la \gls{DGT}, ancêtre de France Télécom, réalise autour de 1970 \og Caducée \fg, un service spécialisé de transmission de données, destiné à répondre à la demande des entreprises en échange de données. Puis c'est le projet Hermès, lancé en 1971, qui vise à intégrer les progrès en commutation électronique. Pour la DGT, c'est un enjeu important face aux réseaux privés, utilisant des liaisons spécialisées. Elle a alors eu besoin de services informatiques pour la programmation, le calcul et pour conserver la gestion des réseaux, afin de ne pas seulement fournir les lignes.
 
 \section{À un paquet}
 
-Malheureusement la commutation de circuits présente un risque de sous-utilisation du support en cas de \og silence \fg pendant la communication.
-C'est pour cette raison qu'au même moment, le British Post Office est encouragé à choisir la voie inverse, la commutation de paquets, par le National Physical Laboratory, qui emploie un des pionniers de cette technologie, Donald Davies. La commutation de paquets est fondée sur le découpage des données pour permettre une utilisation rationnelle du réseau. En effet, contrairement à la commutation de circuits les ressources ne sont réservées que durant leur utilisation effective (par exemple: le temps de transfert d'un paquet). Chaque paquet est composé d'un en-tête contenant des informations sur son contenu et sa destination, qui permet au commutateur d'aiguiller le paquet sur le réseau vers son point final\cite{wikicp}.
+Malheureusement, la commutation de circuits présente un risque de sous-utilisation du support en cas de \og silence \fg pendant la communication.
+C'est pour cette raison qu'au même moment, le British Post Office est encouragé à choisir la voie inverse, la commutation de paquets, par le National Physical Laboratory, qui emploie un des pionniers de cette technologie, Donald Davies. La commutation de paquets est fondée sur le découpage des données pour permettre une utilisation rationnelle du réseau. En effet, contrairement à la commutation de circuits, les ressources ne sont réservées que durant leur utilisation effective (par exemple: le temps de transfert d'un paquet). Chaque paquet est composé d'un en-tête contenant des informations sur son contenu et sa destination, qui permet au commutateur d'aiguiller le paquet sur le réseau vers son point final\cite{wikicp}.
 
 Le principe de la commutation de paquets, baptisée plus tard \og datagramme \fg, a été imaginé de manière encore abstraite et publié pour la première fois en 1964, et présenté en 1968 à la Conférence d'Edimbourg par Donald Davies, du National Physical Laboratory britannique puis par Paul Baran. Mais en 1971, aucun réseau n'avait encore été conçu de la sorte.
 
@@ -223,17 +223,17 @@ En 1970, Antoine Jousset, du \gls{CNET}, rapporte du \gls{CCITT} des information
 \section{Datagramme}
 
 Louis Pouzin est l'inventeur du datagramme et le concepteur du premier réseau à commutation de paquets.
-Le datagramme est un paquet de données dans un réseau informatique ou un réseau de télécommunications. Il est utilisé par des protocoles orientés \og non connectés \fg tels que : IPX ou UDP. Le datagramme est le terme généralement utilisé pour désigner la transmission d'un paquet via un service non \og fiable \fg : le protocole utilisé ne garantit pas que le paquet est arrivé à sa destination (un peu comme une lettre sans accusé de réception). Cyclades est le premier à appliquer intégralement le principe du datagramme, qu'il présente en 1973, dans une conférence internationale. Vinton Cerf et Robert E. Kahn s'en sont emparés pour concevoir le futur protocole de communication d'Internet avec l'aide de Gérard Le Lan, le TCP/IP, qui voit le jour la même année, en reprenant la notion d'indépendance de paquets\cite{wikidtg}.
+Le datagramme est un paquet de données dans un réseau informatique ou un réseau de télécommunications. Il est utilisé par des protocoles orientés \og non connectés \fg tels que IPX ou UDP. Le datagramme est le terme généralement utilisé pour désigner la transmission d'un paquet via un service non \og fiable \fg : le protocole utilisé ne garantit pas que le paquet est arrivé à sa destination (un peu comme une lettre sans accusé de réception). Cyclades est le premier à appliquer intégralement le principe du datagramme  qu'il présente en 1973 dans une conférence internationale. Vinton Cerf et Robert E. Kahn s'en sont emparés pour concevoir le futur protocole de communication d'Internet avec l'aide de Gérard Le Lan, le TCP/IP, qui voit le jour la même année, en reprenant la notion d'indépendance de paquets\cite{wikidtg}.
 
 \section{X.25}
 
-Le X.25 est un protocole par communication de paquet en mode point par point\cite{wikix25}. Développé fin 1971 par le \gls{CNET}, il est finalement normalisé en 1976 par le \glspl{CCITT}, à la demande de 5 pays qui l'utilisaient pour leurs réseaux publics de communication : La France, la Grande-Bretagne, le Canada, la Belgique et les États-Unis. Il a été essentiellement réalisé par les opérateurs téléphoniques, les \gls{PTT}, ce qui lui a assuré une indépendance totale par rapport à un produit ou à un système d'un quelconque constructeur. En 1977, une nouvelle société d'économie mixte, filiale de la DGT est chargée de l'exploitation et de la commercialisation du réseau public Transpac, réseau de transmission de données au protocole X.25 couvrant tout le territoire français, prévu pour les échanges de données des entreprises. Il est ouvert en 1978. Elle détenait le monopole commercial pour la fourniture d'accès X.25 de 1979 jusqu'à 2006\cite{wikitranspac}.
+Le X.25 est un protocole par communication de paquet en mode point par point\cite{wikix25}. Développé fin 1971 par le \gls{CNET}, il est finalement normalisé en 1976 par le \glspl{CCITT} à la demande de 5 pays qui l'utilisaient pour leurs réseaux publics de communication : La France, la Grande-Bretagne, le Canada, la Belgique et les États-Unis. Il a été essentiellement réalisé par les opérateurs téléphoniques, les \gls{PTT}, ce qui lui a assuré une indépendance totale par rapport à un produit ou à un système d'un quelconque constructeur. En 1977, une nouvelle société d'économie mixte, filiale de la DGT, est chargée de l'exploitation et de la commercialisation du réseau public Transpac, réseau de transmission de données au protocole X.25 couvrant tout le territoire français, prévu pour les échanges de données des entreprises. Il est ouvert en 1978. Elle détenait le monopole commercial pour la fourniture d'accès X.25 de 1979 jusqu'à 2006\cite{wikitranspac}.
 
 \section{Deux réseaux concurrents}
 
-La France dispose alors de deux réseaux à commutation de paquets, Cyclades soutenu par l'IRIA et Transpac soutenu par les PTT. Malgré que le réseau Cyclades fut opérationnel en 1974, avec la participation et la coopération du CNET, qui a pourtant un parc de matériel différent, des choix politiques s'y opposent dès 1975.
+La France dispose alors de deux réseaux à commutation de paquets : Cyclades soutenu par l'IRIA et Transpac soutenu par les PTT. Malgré que le réseau Cyclades fut opérationnel en 1974, avec la participation et la coopération du CNET, qui a pourtant un parc de matériel différent, des choix politiques s'y opposent dès 1975.
 
-Louis Pouzin parvient à faire admettre l'idée de développer un réseau de paquets indépendant des PTT \og sans qu'il en résulte des mesures de rétorsion notables de la part du CNET \fg. Mais l'élection de Valéry Giscard d'Estaing à la présidence de la République entraîne \og une révision de la politique informatique \fg, mais les raisons sont essentiellement d'ordre politique, commercial et économique.
+Louis Pouzin parvient à faire admettre l'idée de développer un réseau de paquets indépendant des PTT \og sans qu'il en résulte des mesures de rétorsion notables de la part du CNET \fg. Mais l'élection de Valéry Giscard d'Estaing à la présidence de la République entraîne \og une révision de la politique informatique \fg. Les raisons de cette révision sont essentiellement d'ordre politique, commercial et économique.
 
 Le financement du projet, pourtant modeste, a été définitivement arrêté en 1978, au motif qu'il entrait en concurrence avec Transpac. Le réseau Minitel passa donc par ce dernier, avec pour ses utilisateurs un coût plus élevé et le rationnement de l'accès aux données. Le protocole X.25 remporte d'abord en France une victoire sur les datagrammes\cite{wikicyc}.
 
@@ -267,7 +267,7 @@ Le protocole X.25 intègre les trois couches basses du modèle OSI :
 
 \begin{itemize}
 \item couche physique : \textbf{X21} une interface physique et électrique (liaison série) recommandée et publiée par CCITT en 1976 sur la liaison ETTD/ETCD\cite{wikix21}.
-\item couche liaison : \textbf{HDLC : LAP-B} assure que les trames arrivent dans l'ordre et sans erreurs, c'est ce qui assure la fiabilité du X.25. La vérification des paquets est faite
+\item couche liaison : \textbf{HDLC : LAP-B} assure que les trames arrivent dans l'ordre et sans erreur, c'est ce qui assure la fiabilité du X.25. La vérification des paquets est faite
 par chaque commutateur du réseau X.25, l'ETTD lui ne les fait pas. Il reçoit les paquets dans le bon ordre, il n'a donc pas de traitement supplémentaire à faire. Ce qui fait de l'X.25 un protocole facile
 à implémenter sur les machines de faible puissance (processeur et mémoire vive) comme le minitel\cite{wikilapb}.
 \item couche réseau : \textbf{X25.3} est le cœur du protocole X.25, il assure la gestion des connexions ainsi que l'adressage\cite{gatoux}. Il détermine aussi comment on envoie des données entre deux ETTD.
@@ -304,13 +304,13 @@ C'est une norme d'adressage des réseaux. Elle est comparable à l'adressage E.1
 
 \section{TCP/IP}
 
-À la même époque est développée la suite TCP/IP en 1973 et qui sera adoptée par l'\gls{ARPANET} en 1983. La suite TCP/IP est l'ensemble des protocoles utilisés pour le transfert des données sur Internet. Elle est souvent appelée TCP/IP, d'après le nom de ses deux premiers protocoles : \gls{TCP} et \gls{IP}. Ils ont été inventés par Vinton G. Cerf et Bob Kahn.
+À la même époque est développée la suite TCP/IP en 1973 et qui sera adoptée par l'\gls{ARPANET} en 1983. La suite TCP/IP est l'ensemble des protocoles utilisés pour le transfert des données sur Internet. Elle est souvent appelée TCP/IP d'après le nom de ses deux premiers protocoles : \gls{TCP} et \gls{IP}. Ils ont été inventés par Vinton G. Cerf et Bob Kahn.
 
-Le modèle OSI, qui décompose les différents protocoles en sept couches, peut être utilisé pour décrire la suite de protocoles Internet, bien que les couches du modèle OSI ne correspondent pas toujours avec les habitudes d'Internet puisque qu'Internet est basé sur TCP/IP qui ne comporte que quatre couches, voir figure~\ref{fig:osi-tcp}. Il serait trop long de décrire tous les protocoles de chaque couche du modèle TCP/IP, voici donc une brève description des deux protocoles principaux du modèle TCP/IP\cite{wikitcpip}.
+Le modèle OSI, qui décompose les différents protocoles en sept couches, peut être utilisé pour décrire la suite de protocoles Internet (bien que les couches du modèle OSI ne correspondent pas toujours avec les habitudes d'Internet puisque qu'Internet est basé sur TCP/IP qui ne comporte que quatre couches, voir figure~\ref{fig:osi-tcp}). Il serait trop long de décrire tous les protocoles de chaque couche du modèle TCP/IP, voici donc une brève description des deux protocoles principaux du modèle TCP/IP\cite{wikitcpip}.
 
 Le protocole IP permet un service d'adressage unique pour l'ensemble des terminaux connectés. Il correspond à la couche Internet (Réseau) du modèle TCP/IP. Il utilise l'adressage IPv4 ou IPv6 en fonction de la version du protocole IP. Il est \og non fiable \fg{} car la fiabilité est assurée par le protocole TCP\cite{wikiip}.
 
-Le protocole TCP est un protocole de transport fiable, en mode connecté. Il correspond à la couche transport du modèle TCP/IP. La fiabilité et la validité des paquets sont garanties, à la différence que le protocole ne respecte pas l'ordre de séquencement des paquets, ce qui est tout à fait normal puisqu'il utilise des datagrammes. C'est pour cette raison qu'une connexion TCP est évidemment virtuel, représentée par un port. Le protocole TCP peut ouvrir un maximum de $2^{16}$ ports, soit 65536 connexions théoriques. La vérification des paquets est réalisée par les terminaux émetteur et récepteur des paquets, surtout par le récepteur qui doit garder en mémoire tous les paquets pour compléter le message final\cite{wikitcp}.
+Le protocole TCP est un protocole de transport fiable, en mode connecté. Il correspond à la couche transport du modèle TCP/IP. La fiabilité et la validité des paquets sont garanties, à la différence que le protocole ne respecte pas l'ordre de séquencement des paquets, ce qui est tout à fait normal puisqu'il utilise des datagrammes. C'est pour cette raison qu'une connexion TCP est évidemment virtuelle, représentée par un port. Le protocole TCP peut ouvrir un maximum de $2^{16}$ ports, soit 65536 connexions théoriques. La vérification des paquets est réalisée par les terminaux émetteur et récepteur des paquets, surtout par le récepteur qui doit garder en mémoire tous les paquets pour compléter le message final\cite{wikitcp}.
 
 \begin{figure}[htp]
   \centering
@@ -321,20 +321,20 @@ Le protocole TCP est un protocole de transport fiable, en mode connecté. Il cor
 
 \section{Conclusion}
 
-Malheureusement la fiabilité de l'X.25, c'est-à-dire l'ordre de séquencement des paquets, si cher aux yeux des PTTs, a un prix.
+Malheureusement, la fiabilité de l'X.25, c'est-à-dire l'ordre de séquencement des paquets, si cher aux yeux des PTT, a un prix.
 Chaque nœud d'échange de paquets (Packet-Switching Exchanger) doit vérifier la validité du paquet qui
-transite par lui, ce qui limite et ralenti le nombre de connexions par échangeur. Tout le contraire du TCP qui contrôle les paquets à la réception par le destinataire.
-L'économie de traitement réalisée par l'X.25 pour les ETTDs devient problèmatique par la suite surtout qu'elle n'a plus lieu d'être avec les avancées dans les composants informatiques.
+transite par lui, ce qui limite et ralentit le nombre de connexions par échangeur. Tout le contraire du TCP qui contrôle les paquets à la réception par le destinataire.
+L'économie de traitement réalisée par l'X.25 pour les ETTDs devient problématique par la suite surtout qu'elle n'a plus lieu d'être avec les avancées dans les composants informatiques.
 De plus, le protocole X.25 est limité à 4096 connexions alors que le protocole TCP peut en ouvrir théoriquement 65536. Les nœuds d'X.25 sont donc inférieurs en capacité et en vitesse face à la suite TCP/IP.
 Outre ces différences de vitesse, le protocole X.25 pose des problèmes d'intéropérabilité et de monopole. Les différents constructeurs de l'époque (IBM, Digital), fort de leur monopole,
 ont fait tout leur possible pour rendre leurs matériels incompatibles entre eux pour des raisons de concurrence, ce qui complique le travail des entreprises pour
 communiquer entre-elles et leurs différents interlocuteurs\cite{gatoux}. Le monopole d'exploitation de Transpac a forcé les opérateurs concurrents à s'orienter sur TCP/IP.
-Le X25 souffrait donc d'un problème d'ouverture et d'unification, ce qui n'est pas le cas avec l'encapsulation du TCP/IP,
+Le X.25 souffrait donc d'un problème d'ouverture et d'unification, ce qui n'est pas le cas avec l'encapsulation du TCP/IP,
 qui peut s'adapter à n'importe quelle application à travers son réseau. Le dernier commutateur X.25 du réseau Orange est éteint le 12 mai 2017\cite{killme}.
 
 Pour méditer... Selon Maurice Allègre, délégué à l'informatique du Plan Calcul :
 
-\og Louis Pouzin, polytechnicien et chercheur de très grand talent, (est à l'époque) venu proposer un projet de réseau maillé d'ordinateurs basé sur quelque chose de totalement nouveau : la commutation de paquets. « Très vite, les recherches ont connu un plein succès, au point que j'ai déployé de grands efforts pour faire adopter le projet par la direction générale des télécommunications comme base pour leur futur réseau de transmissions de données », dit M. Allègre dans un courrier. « Je me suis malheureusement heurté à un mur. (Les ingénieurs des télécoms préfèrent pousser le développement industriel du Minitel. ) Nous aurions pu être parmi les pionniers du monde Internet (...)», conclut le courrier de l'ancien haut fonctionnaire. Nous n'en sommes que des utilisateurs, fort distants des lieux où s'élabore l'avenir. \fg\cite{wikipouzin}
+\og Louis Pouzin, polytechnicien et chercheur de très grand talent, (est à l'époque) venu proposer un projet de réseau maillé d'ordinateurs basé sur quelque chose de totalement nouveau : la commutation de paquets. « Très vite, les recherches ont connu un plein succès, au point que j'ai déployé de grands efforts pour faire adopter le projet par la direction générale des télécommunications comme base pour leur futur réseau de transmissions de données », dit M. Allègre dans un courrier. « Je me suis malheureusement heurté à un mur (Les ingénieurs des télécoms préfèrent pousser le développement industriel du Minitel). Nous aurions pu être parmi les pionniers du monde Internet (...) », conclut le courrier de l'ancien haut fonctionnaire. Nous n'en sommes que des utilisateurs, fort distants des lieux où s'élabore l'avenir. \fg\cite{wikipouzin}
 
 % ~=~=~=~=~=~=~=~=~=~=~=~=~
 % Le premier vol d'Ariane 5
@@ -351,36 +351,36 @@ détruisant par le même occasion sa charge utile constituée de 4 satellites, d
 \section{Le déroulement du crash}
 
 Environ 30 secondes après le décollage, la centrale à inertie de secours est devenu inopérante à cause d'une variable relative à l'accélération horizontale de l'appareil. L'incident s'est passé lors d'une conversion    
-d'un nombre à virgule codé sur 64 bits vers un entier signé codé sur 16 bits. Le nombre à virgule à convertir avait une valeur trop grande pour être converti en entier sur 16 bits. De plus il avait été décidé de ne pas mettre en place de mesure de protection contre cette erreur lors de son écriture pour Ariane 4 car la variable ayant dépassée est dépendante de la vitesse de l'appareil. Pour Ariane 4 cela ne posait aucun problème car la vitesse maximale de la fusée était trop faible pour générer ce dépassement de mémoire. Cependant, Ariane 5 est une fusée plus puissante qu'Ariane 4 et sa vitesse à donc dépassé la limite qui garantissait qu'aucune erreur de ce type ne se produise \cite{ariane}.
+d'un nombre à virgule codé sur 64 bits vers un entier signé codé sur 16 bits. Le nombre à virgule à convertir avait une valeur trop grande pour être converti en entier sur 16 bits. De plus, il avait été décidé de ne pas mettre en place de mesure de protection contre cette erreur lors de son écriture pour Ariane 4 car la variable ayant dépassée est dépendante de la vitesse de l'appareil. Pour Ariane 4, cela ne posait aucun problème car la vitesse maximale de la fusée était trop faible pour générer ce dépassement de mémoire. Cependant, Ariane 5 est une fusée plus puissante qu'Ariane 4 et sa vitesse a donc dépassé la limite qui garantissait qu'aucune erreur de ce type ne se produise \cite{ariane}.
 
-Environ 0.05 secondes plus tard la centrale à inertie active a subi le même problème mais étant donné que le système de secours n'était déjà plus opérationnel, plus aucune information concernant l'altitude et le guidage de la fusée n'était disponible.   
+Environ 0.05 secondes plus tard, la centrale à inertie active a subi le même problème mais étant donné que le système de secours n'était déjà plus opérationnel, plus aucune information concernant l'altitude et le guidage de la fusée n'était disponible.   
 
 L'ordinateur principal a alors interprété les données diagnostiques de la centrale à inertie comme des données de vol et a entrepris une correction de trajectoire d'une déviation qui, au final, n'a jamais eu lieu.
   
-Cette nouvelle trajectoire a entrainé un changement brutal d'altitude qui a lui même causé la désintégration du lanceur de la fusée. Cette désintégration a alors  enclenché l'auto-destruction de la fusée à une altitude de 4000 mètres.
+Cette nouvelle trajectoire a entrainé un changement brutal d'altitude qui a lui même causé la désintégration du lanceur de la fusée. Cette désintégration a alors enclenché l'auto-destruction de la fusée à une altitude de 4000 mètres.
 
-De plus le \gls{CNES} a demandé de ne pas faire de simulations de vol pour le système de navigation pour faire des économies car celui-ci avait été récupéré d'Ariane 4 et était considéré comme fiable.
+De plus le \gls{CNES} a demandé de ne pas faire de simulations de vol du système de navigation pour faire des économies car celui-ci avait été récupéré d'Ariane 4 et était considéré comme fiable.
 
 Enfin, le même code a été placé dans les deux centrales à inertie, ce qui a inévitablement permis au bug de se produire dans les deux centrales. 
 
 \section{Les solutions possibles}
 Une des premières causes de cet échec est tout d'abord le faible budget alloué pour le développement d'Ariane 5.
-Dès le début du projet le CNES et L'\gls{ESA} ont dû s'arranger pour réduire le plus possible le coût de réalisation de la fusée. C'est dans ce que contexte qu'ont été décidés les choix de réutiliser le code d'Ariane 4, celui de placer ce même code dans les deux centrales à inertie ainsi que le choix de ne pas réaliser de simulation de vol, tout cela dans le but de limiter le coût de production de cette fusée.
+Dès le début du projet, le CNES et L'\gls{ESA} ont dû s'arranger pour réduire le plus possible le coût de réalisation de la fusée. C'est dans ce que contexte qu'ont été décidés les choix de réutiliser le code d'Ariane 4, celui de placer ce même code dans les deux centrales à inertie ainsi que le choix de ne pas réaliser de simulation de vol, tout cela dans le but de limiter le coût de production de cette fusée.
 
 Pour ce problème de budget, on ne peut présenter de réelles solutions. Le seul moyen d'éviter ces choix aurait été d'avoir un budget plus important en premier lieu.
 
-En revanche, si l'on aborde les solutions qui aurait pu détecter et empêcher le dépassement mémoire en lui même alors on peut en voir plusieurs. Premièrement, rappeler l'importance d'utiliser des programmes développés de manière indépendante pour un ordinateur ainsi que celui de secours. Cela permet d'éviter qu'une même erreur se produise sur les deux ordinateurs comme dans le cas d'Ariane 5. Le problème avec cette technique, c'est qu'elle ne permet pas de garantir que notre programme ne génère aucun bug et qu'il a bien le comportement souhaité et spécifié. Donc pour éviter ce dépassement mémoire, on peut aussi utiliser diverses méthodes prouvant que notre programme a le comportement souhaité peu importe la situation. Ces diverses techniques sont regroupées sous le nom de méthodes formelles. 
+En revanche, il existe plusieurs solutions qui aurait pu détecter et empêcher le dépassement mémoire en lui même. Premièrement, rappeler l'importance d'utiliser des programmes développés de manière indépendante pour un ordinateur ainsi que celui de secours. Cela permet d'éviter qu'une même erreur se produise sur les deux ordinateurs comme dans le cas d'Ariane 5. Le problème avec cette technique, c'est qu'elle ne permet pas de garantir que notre programme ne génère aucun bug et qu'il a bien le comportement souhaité et spécifié. Donc pour éviter ce dépassement mémoire, on peut aussi utiliser diverses méthodes prouvant que notre programme a le comportement souhaité peu importe la situation. Ces diverses techniques sont regroupées sous le nom de méthodes formelles. 
 \section{Les méthodes formelles }
 \subsection{Présentation}
 Les méthodes formelles sont des méthodes qui utilisent les mathématiques afin de démontrer qu'un système informatique respecte parfaitement ses spécifications. Les méthodes formelles sont à l'heure actuelle surtout utilisées sur les systèmes dits critiques.
 
-Un système critique est un système informatique qui, en cas de dysfonctionnement, peut causer des morts ou des blessés, des coût matériels élevés ou de graves conséquences pour l'environnement. Par exemple dans le domaine du transport, de la santé ou même de l'énergie.
+Un système critique est un système informatique qui, en cas de dysfonctionnement, peut causer des morts ou des blessés, des coût matériels élevés ou de graves conséquences pour l'environnement (par exemple dans le domaine du transport, de la santé ou même de l'énergie).
 
 La plupart des méthodes formelles ont été théorisées dans les années 80 mais n'ont pu être appliquées que bien plus tard à cause des limitations techniques des ordinateurs de l'époque. 
 
-De plus ces méthodes, même quand elles étaient techniquement appliquables, ont mis du temps à s'imposer dans les entreprises car les ingénieurs de l'époque ne trouvaient pas d'intérêt à utiliser de telles méthodes. Cependant, durant les années 2000, les méthodes formelles sont de plus en plus utilisées dans les entreprises car de nouveaux employés formés à ces méthodes font leur apparition dans les entreprises. De plus, l'\gls{EAL},un système d'évaluation de la sécurité d'un système informatique, a recours aux méthodes formelles afin de réaliser son évaluation, incitant les développeurs à eux même utiliser les méthodes formelles lors de la création de leur solution \cite{griffault}.    
+De plus, ces méthodes, même quand elles étaient techniquement appliquables, ont mis du temps à s'imposer dans les entreprises car les ingénieurs de l'époque ne trouvaient pas d'intérêt à utiliser de telles méthodes. Cependant, durant les années 2000, les méthodes formelles sont de plus en plus utilisées dans les entreprises car de nouveaux employés formés à ces méthodes font leur apparition dans les entreprises. Par ailleurs, l'\gls{EAL},un système d'évaluation de la sécurité d'un système informatique, a recours aux méthodes formelles afin de réaliser son évaluation, incitant les développeurs à eux même utiliser les méthodes formelles lors de la création de leur solution \cite{griffault}.    
 
-Il existe plusieurs méthodes intervenant à divers moments du cycle de vie du développement. Elles seront présentés dans les prochaines sections.   
+Il existe plusieurs méthodes intervenant à divers moments du cycle de vie du développement. Elles seront présentées dans les prochaines sections.   
 \subsection{Vérification de modèles}
 La vérification par modèle est la méthode formelle la plus utilisée à l'heure actuelle au sein de l'industrie \cite{griffault}. Elle permet de vérifier si le modèle d'un système respecte diverses propriétés. Si la propriété n'est pas vérifiée, on renvoie un contre-exemple qui l'invalide. 
 
@@ -388,7 +388,7 @@ Un modèle est un graphe dont chaque sommet représente un état du système.
 
 Il existe deux types de propriété à vérifier.
 
-En premier on peut citer les propriétés de sécurité. Par exemple, dans le cas d'un ascenseur, cela serait la propriété "Un ascenseur doit toujours voyager les portes fermées".
+En premier, on peut citer les propriétés de sécurité. Par exemple, dans le cas d'un ascenseur, cela serait la propriété "Un ascenseur doit toujours voyager les portes fermées".
 
 Puis il y a les propriétés de vivacité. Pour reprendre le cas de l'ascenseur, on pourrait avoir "L'ascenseur ramasse les utilisateurs qui l'appelle".   
 
@@ -400,19 +400,21 @@ Cependant, la vérification de modèles est une méthode particulièrement effic
 La génération de tests fonctionne de la même manière que la vérification de modèle. On créé un modèle et au lieu de chercher à vérifier une propriété, on définit toutes les actions à faire pour qu'une propriété soit vrai. Cette suite d'actions nous donne le test à réaliser pour vérifier notre propriété \cite{griffault}.
 
 \subsection{Démonstration de théorèmes}
-Le but initial ici est de faire en sorte que des logiciels puissent réaliser une démonstration d'une proposition de façon totalement autonome. Cependant les problèmes abordés sont souvent trop profonds pour qu'un logiciel puisse réaliser cela tout seul. En conséquence, il existe des logiciels qui permettent à une personne de résoudre plus facilement des problèmes. Ces logiciels s'appellent des assistants de preuve. 
+Le but initial ici est de faire en sorte que des logiciels puissent réaliser une démonstration d'une proposition de façon totalement autonome. Cependant, les problèmes abordés sont souvent trop profonds pour qu'un logiciel puisse réaliser cela tout seul. En conséquence, il existe des logiciels qui permettent à une personne de résoudre plus facilement des problèmes. Ces logiciels s'appellent des assistants de preuve. 
 
-Les assistants de preuve sont assez pratiques pour démontrer qu'un algorithme réalise bien ce pourquoi on l'a crée. En revanche, cette méthode a le désavantage de demander une personne hautement spécialisée dans ce domaine pour pouvoir apporter un réel plus à contrario des méthodes déjà citées et à venir \cite{griffault}.
+Les assistants de preuve sont assez pratiques pour démontrer qu'un algorithme réalise bien ce pourquoi on l'a crée. En revanche, cette méthode a le désavantage de demander une personne hautement spécialisée dans ce domaine pour pouvoir apporter un réel plus a contrario des méthodes déjà citées et à venir \cite{griffault}.
 
 Un des plus grand succès des assistants de preuve a sûrement été la réalisation d'une preuve formelle du théorème des quatre couleurs. Ce théorème stipule qu'il est possible de colorier une carte avec quatre couleurs uniquement et sans qu'une même couleur se trouve sur deux régions adjacentes de cette carte. Ce théorème à donc été prouvé en 2004 à l'aide de l'assistant de preuve Coq, développé par l'INRIA \cite{delahaye}.     
 
 \subsection{Raffinement}
 
-Le raffinement est une méthode qui permet de transformer des spécifications, donc un niveau assez abstrait, à une implémentation par un système d'itérations tout en garantissant à chaque étape de ce raffinement la conservation des propriétés du système. De plus, chaque itération du raffinement doit être prouvée par la méthode de démonstration de théorème.
+Le raffinement est une méthode qui permet de transformer des spécifications, donc un niveau assez abstrait, en une implémentation par un système d'itérations tout en garantissant à chaque étape de ce raffinement la conservation des propriétés du système. De plus, chaque itération du raffinement doit être prouvée par la méthode de démonstration de théorème.
 
-Le raffinement est utilisé dans la méthode B, une méthode permettant de spécifier un logiciel en langage B et d'y appliquer un raffinement jusqu'à obtenir une implémentation finale qui peut ensuite être traduite en C ou en Ada. Cette méthode a notamment permis de réaliser le projet météor, à savoir l'automatisation totale de la ligne 14 du métro parisien. Cette méthode a également permis de certifier le système de cette ligne de métro sans avoir recours à des vérifications a posteriori \cite{griffault}.      
+Le raffinement est utilisé dans la méthode B, une méthode permettant de spécifier un logiciel en langage B et d'y appliquer un raffinement jusqu'à obtenir une implémentation finale qui peut ensuite être traduite en C ou en Ada. Cette méthode a notamment permis de réaliser le projet météor, à savoir l'automatisation totale de la ligne 14 du métro parisien. Cette méthode a également permis de certifier le système de cette ligne de métro sans avoir recours à des vérifications a posteriori \cite{griffault}.   
+   
 \subsection{Langages dédiés}
 Un langage dédié est un langage offrant des primitives et des abstractions qui permettent de travailler plus efficacement dans un domaine particulier. Le haut niveau d'abstraction permet aux professionnels du domaine concerné de ne se concentrer que sur les problèmes de son domaine et non les problèmes de plus bas niveau, limitant ainsi les erreurs possibles et rendant plus facile la validation d'une solution par ces même experts \cite{Deuklvi}. On peut ici citer Bison et Lex permettant de travailler respectivement sur les analyseurs syntaxiques et lexicaux.
+
 \subsection{Interprétation abstraite}
 Avec l'interprétation abstraite, on part du programme et on tente d'approximer sa sémantique. On réduit donc un problème complexe, notre programme, en un modèle abstrait. Avec cela, un analyseur peut comparer l'approximation du comportement du programme avec les spécifications de base, et si un problème a lieu, l'analyseur peut donner des pistes afin de corriger l'erreur trouvée.
 
@@ -421,14 +423,14 @@ Cette méthode permet de raisonner sur des programmes de grande taille en imposa
 
 L'analyse de code binaire est une méthode très récente et encore en pleine évolution. C'est une méthode permettant de désassembler un exécutable afin de vérifier si certaines propriétés d'un programme sont valides même sans avoir le code source. 
 
-C'est une méthode qui peut être utilisée sur des systèmes auxquels on peut rajouter des modules afin de vérifier que le module ne modifie pas les propriétés de tout le système et que celui-ci reste bien assigné à son rôle \cite{griffault}.
+C'est une méthode qui peut être utilisée sur des systèmes auxquels on peut rajouter des modules, afin de vérifier que le module ne modifie pas les propriétés de tout le système et que celui-ci reste bien assigné à son rôle \cite{griffault}.
 \subsection{Limites}
 
 Il faut tout de même apporter un peu de nuances à tout cela. Les méthodes formelles ne sont pas infaillibles. Elle ne garantissent pas impérativement qu'un programme soit sans bug.
 
-Tout d'abord, il faut que les modèles créés ait un sens, à force de complexifier un modèle pour respecter les propriétés les plus compliquées, on peut finir par ne plus pouvoir faire des actions qui étaient pourtant simple dans le modèle de base. 
+Tout d'abord, il faut que les modèles créés ait un sens, à force de complexifier un modèle pour respecter les propriétés les plus compliquées, on peut finir par ne plus pouvoir faire des actions qui étaient pourtant simples dans le modèle de base. 
 
-Pour les démonstrations de théorèmes, pour qu'une démonstration soit valide, il faut que le logiciel d'aide à la preuve utilisé soit lui aussi prouvé au préalable, ce qui est très dur à faire.
+Pour les démonstrations de théorèmes, pour qu'une démonstration soit valide, il faut que le logiciel d'aide à la preuve utilisé soit lui aussi prouvé au préalable, ce qui est très difficile à faire.
 
 Et pour finir, il faut aussi se rappeler que le fait qu'un algorithme fasse réellement ce qu'on lui demande est bien souvent un problème indécidable \cite{griffault}.
 
