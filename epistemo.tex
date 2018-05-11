@@ -350,7 +350,7 @@ détruisant par le même occasion sa charge utile constituée de 4 satellites, d
 
 \section{Le déroulement du crash}
 
-Environ 30 secondes après le décollage, la centrale à inertie de secours est devenu inopérante à cause d'une variable relative à l'accélération horizontale de l'appareil. L'incident s'est passé lors d'une conversion    
+Environ 30 secondes après le décollage, la centrale à inertie de secours, un instrument permettant de déterminer la position, l'orientation et la vitesse linéaire d'un mobile, est devenu inopérante à cause d'une variable relative à l'accélération horizontale de l'appareil. L'incident s'est passé lors d'une conversion    
 d'un nombre à virgule codé sur 64 bits vers un entier signé codé sur 16 bits. Le nombre à virgule à convertir avait une valeur trop grande pour être converti en entier sur 16 bits. De plus, il avait été décidé de ne pas mettre en place de mesure de protection contre cette erreur lors de son écriture pour Ariane 4 car la variable ayant dépassée est dépendante de la vitesse de l'appareil. Pour Ariane 4, cela ne posait aucun problème car la vitesse maximale de la fusée était trop faible pour générer ce dépassement de mémoire. Cependant, Ariane 5 est une fusée plus puissante qu'Ariane 4 et sa vitesse a donc dépassé la limite qui garantissait qu'aucune erreur de ce type ne se produise \cite{ariane}.
 
 Environ 0.05 secondes plus tard, la centrale à inertie active a subi le même problème mais étant donné que le système de secours n'était déjà plus opérationnel, plus aucune information concernant l'altitude et le guidage de la fusée n'était disponible.   
@@ -400,7 +400,7 @@ Cependant, la vérification de modèles est une méthode particulièrement effic
 La génération de tests fonctionne de la même manière que la vérification de modèle. On créé un modèle et au lieu de chercher à vérifier une propriété, on définit toutes les actions à faire pour qu'une propriété soit vrai. Cette suite d'actions nous donne le test à réaliser pour vérifier notre propriété \cite{griffault}.
 
 \subsection{Démonstration de théorèmes}
-Le but initial ici est de faire en sorte que des logiciels puissent réaliser une démonstration d'une proposition de façon totalement autonome. Cependant, les problèmes abordés sont souvent trop profonds pour qu'un logiciel puisse réaliser cela tout seul. En conséquence, il existe des logiciels qui permettent à une personne de résoudre plus facilement des problèmes. Ces logiciels s'appellent des assistants de preuve. 
+L'apparition de l'informatique a permis aux mathématiciens de rêver d'une démonstration formelle de proposition par le biais de logiciels totalement automatisées. Cependant, les problèmes abordés sont souvent trop profonds pour qu'un logiciel puisse réaliser cela tout seul. En conséquence, il existe des logiciels qui permettent à une personne de résoudre plus facilement des problèmes. Ces logiciels s'appellent des assistants de preuve. 
 
 Les assistants de preuve sont assez pratiques pour démontrer qu'un algorithme réalise bien ce pourquoi on l'a crée. En revanche, cette méthode a le désavantage de demander une personne hautement spécialisée dans ce domaine pour pouvoir apporter un réel plus a contrario des méthodes déjà citées et à venir \cite{griffault}.
 
