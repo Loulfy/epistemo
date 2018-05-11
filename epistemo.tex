@@ -37,7 +37,8 @@
 \newacronym{CNES}{CNES}{Centre National d'Études Spatiales}
 \newacronym{CVP}{CVP}{Circuit Virtuel Permanent}
 \newacronym{CVC}{CVC}{Circuit Virtuel Commuté}
-
+\newacronym{ESA}{ESA}{European Space Agency}
+\newacronym{EAL}{EAL}{Evaluation Assurance Level}
 \maketitle
 \tableofcontents
 
@@ -347,10 +348,10 @@ Le 4 juin 1996, le premier vol d'Ariane 5 a échoué. Après 37 secondes de vol 
 détruisant par le même occasion sa charge utile constituée de 4 satellites, d'une valeur total de 370 millions de dollars.
 A la suite de l'incident le CNES a demandé une enquête afin de déterminer les causes de l'incident.
 
-\section{Les causes}
+\section{Le déroulement du crash}
 
 Environ 30 secondes après le décollage, la centrale à inertie de secours est devenu inopérante à cause d'une variable relative à l'accélération horizontale de l'appareil. L'incident s'est passé lors d'une conversion    
-d'un nombre à virgule codé sur 64 bits vers un entier signé codé sur 16 bits. Le nombre à virgule à convertir avait une valeur trop grande pour être converti en entier sur 16 bits. De plus il avait été décidé de ne pas mettre en place de mesure de protection contre cette erreur car il avait été considéré qu'il était impossible que cette variable puisse atteindre des valeurs générant des dépassements de mémoire.
+d'un nombre à virgule codé sur 64 bits vers un entier signé codé sur 16 bits. Le nombre à virgule à convertir avait une valeur trop grande pour être converti en entier sur 16 bits. De plus il avait été décidé de ne pas mettre en place de mesure de protection contre cette erreur lors de sont écriture pour Ariane 4 car la variable ayant dépassé est dépendante de la vitesse de l'appareil. Pour Ariane 4 cela ne posait aucun problème car la vitesse maximal de la fusée était trop faible pour générer ce dépassement de mémoire. Cependant Ariane 5 est une fusée plus puissante qu'Ariane 4 et sa vitesse à donc dépassé la limite qui garantissait qu'aucune erreur de ce type ne se produise \cite{ariane}.
 
 Environ 0.05 secondes plus tard la centrale à inertie active à subi le même problème mais vu que le système de secours n'était déjà plus opérationnel plus aucune information concernant l'altitude et le guidage de la fusée n'était disponible.   
 
@@ -358,10 +359,80 @@ L'ordinateur principal a alors interprété les données diagnostiques de la cen
   
 Cette nouvelle trajectoire a entrainé un changement brutal d'altitude qui a lui même causé la désintégration du lanceur de la fusée. Cette désintégration a alors  enclenché l'auto-destruction de la fusée à une altitude de 4000 mètre.
 
-Aussi le \gls{CNES} a demandé de ne pas faire de simulations de vol pour le système de navigation pour faire des économies car celui-ci avait été récupéré d'Ariane 4 et était considéré comme fiable.
+De plus le \gls{CNES} a demandé de ne pas faire de simulations de vol pour le système de navigation pour faire des économies car celui-ci avait été récupéré d'Ariane 4 et était considéré comme fiable.
 
-\section{Répercutions}
-\section{La vérification de logiciel}
+Enfin le même code à été placé dans les deux centrales à inertie, ce qui à inévitablement permis au bug de ce produire dans les deux centrales. 
+
+\section{Les solutions possibles}
+Une des premières causes de cet échec est tout d'abord le faible budget alloué pour le développement d'Ariane 5.
+Dès le début du projet le CNES et L'\gls{ESA} ont dû s'arranger pour réduire le plus possible le coût de réalisation de la fusée. C'est dans ce que contexte qu'ont été décidés les choix de réutiliser le code  d'Ariane 4, celui de placer ce même code dans les deux centrales à inertie ainsi que le choix de ne pas réaliser de simulation de vol, tout ça dans le but donc de limiter le coût de production de cette fusée.
+
+Pour ce problème de budget on ne peut présenter de réel solutions. Le seul moyen d'éviter ces choix aurait été d'avoir un budget plus important en premier lieu.
+
+En revanche si on aborde les solutions qui aurait pu détecter et empêcher le dépassement mémoire en lui même alors on peut en voir plusieurs. Premièrement rappeler l'importance d'utiliser des programmes développés de manière indépendante pour un ordinateur ainsi que celui de secours. Cela permet d'éviter qu'une même erreur ce produise sur les deux ordinateurs comme dans le cas d'Ariane 5. Le problème avec cette technique c'est qu'elle ne permet pas de garantir que notre programme ne génère aucun bug et qu'il a bien le comportement souhaité et spécifié. Donc pour éviter ce dépassement mémoire on peut aussi utiliser divers méthodes prouvant que notre programme à le comportement souhaité peu importe la situations. Ces divers techniques sont regroupées sous le nom de méthodes formelles. 
+\section{Les méthodes formelles }
+\subsection{Présentation}
+Les méthodes formelles sont des méthodes qui utilisent les mathématiques afin de démontrer qu'un système informatique respecte parfaitement ses spécifications. Les méthodes formelles sont à l'heure actuelle surtout sur les systèmes dits critiques.
+
+Un système critique est un système informatique qui en cas de dysfonctionnement peu causer des morts ou des blessés, des coût matériels élevés ou de graves conséquences pour l'environnement. Par exemple dans le domaine du transport, de la santé ou même de l'énergie.
+
+La plupart des méthodes formelles ont été théorisées dans les années 80 mais n'ont pu être appliquées que bien plus tard à cause des limitations techniques des ordinateurs de l'époque. 
+
+De plus ces méthodes mais quand elles étaient techniquement possible ont mis du temps à s'imposer dans les entreprises car les ingénieurs de l'époque ne trouver pas d'intérêt à utiliser de telles méthodes. Cependant durant les années 2000 les methodes formelles sont de plus en plus utilisés dans les entreprises car de nouveau employés formés à ces méthodes font leur apparition dans les entreprises. De plus l'\gls{EAL},un système d'évaluation de la sécurité d'un système informatique, à recours aux méthodes formelles afin de réaliser son évaluation, incitant les les développeurs à eux même utiliser les  formelles lors de la création de leur solution \cite{griffault}.    
+
+Il existes plusieurs méthodes intervenant à divers moments du cycle de vie du développement. Elles seront présenté dans les prochaines sections.   
+\subsection{Vérification de modèles}
+La vérification par modèle est la méthode formelle la plus utilisé à l'heure actuelle au sein de l'industrie \cite{griffault}. Elle permet de vérifier si le modèle d'un système respect divers propriétés. Si la propriété n'est pas vérifié on renvoie un contre-exemple qui l'invalide. 
+
+Un modèle est un graphe donc chaque sommet représente un état du système.
+
+Il existe deux types de propriété à vérifier.
+
+En premier les propriétés de sécurité, par exemple dans le cas d'un ascenseur ça serait la propriété "Un ascenseur doit toujours voyager les portes fermées".
+
+Puis il y a les propriétés de vivacité, pour reprendre le cas de l'ascenseur on pourrait avoir "L'ascenseur ramasse les utilisateurs qui l'appelle".   
+
+Un des grands désavantages de cette méthode c'est que la taille du modèle devient très rapidement extrêmement grande et impossible à utiliser en fonction du système que l'on veux mettre en place.
+   
+Cependant la vérification de modèles est une méthodes particulièrement efficace lorsqu'elle est utilisé pour vérifier des protocoles réseaux. La vérification de modèle à par exemple été utilisé pour trouver FREAK, une faille des protocoles SSL/TLS. Grâce à cette méthode des équipes conjointes de l'INRIA et de Microsoft on ainsi prouver que les protocoles faisaient bien plus que ce qui était spécifié et que cela était à l'avantage de potentiels attaquants \cite{goubault}.    
+
+\subsection{Génération de tests}
+La génération de test fonctionne de la même manière que la vérification de modèle. On créer un modèle et au lieu de chercher à vérifier une propriété on défini toutes les actions à faire pour qu'une propriétés soit vrai. Cette suite d'action nous donne le test à réaliser pour vérifier notre propriété \cite{griffault}.
+
+\subsection{Démonstration de théorèmes}
+Le but initial ici est de faire en sorte que des logiciels puissent réaliser des une démonstration d'une proposition de façon totalement autonome. Cependant les problèmes abordés sont souvent trop profonds pour qu'un logiciel puisse réaliser cela tout seul. En conséquence il existe des logiciels qui permet à une personne de résoudre plus facilement des problèmes. Ces logiciels s'appellent des assistants de preuve. 
+
+Les assistants de preuve sont assez pratique pour démontrer  qu'un algorithme réalise bien ce pourquoi on l'a crée. En revanche cette méthode à le désavantage de demander une personnes hautement spécialisé dans ce domaine pour pouvoir apporter un réel plus à contrario des méthodes déjà citées et à venir \cite{griffault}.
+
+Un des plus grand succès des assistant de preuve à surement été la réalisation d'une preuve formelle du théorème des quatre couleurs. Ce théorème stipule qu'il est possible de colorier une carte avec quatre couleur uniquement et sans qu'une même couleur se trouve sur deux régions adjacentes de cette carte. Ce théorème à donc été prouvé en 2004 à l'aide de l'assistant de preuve Coq, développé par l'INRIA \cite{delahaye}.     
+
+\subsection{Raffinement}
+
+Le raffinement est une méthode qui permet de transformer des spécifications, donc un niveau assez abstrait, à une implémentation par un système d'itérations tout en garantissant à chaque étape de ce raffinement la conservation des propriétés du système. De plus chaque itération du raffinement doit être prouvé par la méthode de démonstration de théorème.
+
+Le raffinement est utilisé dans la méthode B, une méthode permettant de spécifier un logiciel en langage B et d'y appliquer un raffinement jusqu'à obtenir une implémentation final qui peux ensuite être traduit en C ou en Ada. Cette méthode à notamment permis de réaliser le projet météor, à savoir l'automatisation total de la ligne 14 du métro parisien. Cette méthode à permis de certifier le système de cette ligne de métro sans avoir recours à des vérifications à posteriori \cite{griffault}.      
+\subsection{Langages dédiés}
+Un langage dédié est un langage offrant des primitives et des abstractions qui permettent de travailler plus efficacement dans un domaine particulier. Le haut niveau d'abstraction permet à aux professionnels du domaine concerner de ne se concentrer que sur les problèmes de son domaine et non les problèmes de plus bas niveau, limitant ainsi les erreurs possible et rendant plus facile la validation d'une solution par ces même experts \cite{Deuklvi}. On peut ici citer Bison et Lex permettant de travailler respectivement sur les analyseurs syntaxiques et lexical.
+\subsection{Interprétation abstraite}
+Avec l'interprétation abstraite on par du programme et on tente d'approximer sa sémantique. On réduit don un problème complexe, notre programme, en un modèle abstrait.Avec cela, un analyseur peut comparer l'approximation du comportement du programme avec les spécifications de base et si un problème à lieu l'analyseur peut donner des pistes afin de corriger l'erreur trouvé.
+
+Cette méthode permet de raisonner sur des programmes de grande taille en imposant un niveau d'approximation assez élevé. Le problème c'est que ce niveau d'approximation ne nous permet alors de verfier que des propriété très basique portant très souvent sur l'absence d'erreurs d'exécution \cite{cousot}.    
+\subsection{Analyse de code binaire}
+
+L'analyse de code binaire est une méthode très récente et donc encore en pleine évolution. C'est une méthode permettant de désassembler un exécutable afin de vérifier si certaine propriétés d'un programme est valide même sans avoir le code source. 
+
+C'est une méthode qui peux être utilisé sur des système auxquels on peut rajouter des modules afin de vérifier que le module ne modifie pas les propriétés de tout le système et que celui-ci reste bien assigné à son rôle \cite{griffault}.
+\subsection{Limites}
+
+Il faut tout de même apporter un peu nuance à tout ça. Les méthodes formelles ne sont pas des infaillibles garantissent impérativement qu'un programme est sans bug.
+
+Tout d'abord il faut que les modèles crées ait un sens, à force de complexifier un modèle pour respecter les propriétés les plus compliquées on peut finir par ne plus pouvoir faire des actions qui étaient pourtant simple dans le modèle de base. 
+
+Pour les démonstrations de théorèmes, pour qu'une démonstration soit valide, il faut que le logiciel d'aide à la preuve utilisé pour la démonstration soit lui aussi prouvé au préalable, ce qui est très dur à faire.
+
+Et pour finir il faut aussi se rappeler que le fait qu'un algorithme fasse réellement ce qu'on lui demande est bien souvent un problème indécidable \cite{griffault}.
+
+Les méthodes formelles sont donc de formidables outils à condition de ne pas tout miser sur eux lors du développement afin d'obtenir un programme qui fonctionne comme souhaité.
 
 \printglossaries
 \printbibliography
